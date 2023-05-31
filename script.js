@@ -173,13 +173,25 @@ function Kosaradd(cucc) {
     }else{
         window.alert("nem tudom mi történt help")
     }
-    document.getElementById("cartcount").innerHTML=kosar.length
+
+    /* HA a kosárban nincsen cuccos muccos akkor,
+     Tompetinek nem kell elénekelnie a számos dalt*/
+    if(kosar.length>0) document.getElementById("cartcount").innerHTML=kosar.length
+    else document.getElementById("cartcount").innerHTML=""
+
+    /*Kiszámolja a kosár tartalmának tartalmazó termékek hez tartozó árat,
+    megszorozza a árt a mennyiséggel amit a kosár tartalma tartalmaz
+    */
     kosarprice = (neuf.ar*neuf.kosarban)+(toldi.ar*toldi.kosarban)
         +(alekosz.ar*alekosz.kosarban)+(drip.ar*drip.kosarban)+
         (csabi.ar*csabi.kosarban)+(kalap.ar*kalap.kosarban)+
-        (erettsegi.ar*erettsegi.kosarban)+
+        (erettsegi.ar*erettsegi.kosarban)+(tanarno.ar*tanarno.kosarban)
+    /* na nem mintha az ingyenes item számítani,
+    de az Epic Games is küld számlát a Fortnite-ról ha letöltjük
+     */
 
-    document.getElementById("cartprice").innerHTML=kosarprice
+document.getElementById("cartprice").innerHTML=kosarprice
+
 
 
 KosarDispl()
