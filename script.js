@@ -9,146 +9,165 @@ function kikerdezett() {
 
     console.log("page loaded")
    let kosararak=[]
+//ADATOK
+//TOLDI MIKLÓS KATONÁJA VAGYOK LEGSZEBB KATONÁÁÁÁJA
+let toldi = {
+    nev: "Toldi II",
+    hivo: cucc,
+    ar: 1263542999,
+    kep: "img/Toldi2.png",
+    kosarban: 0,
+    /*a torol függvény nem csinál amúgy semmit,
+        de régen úgy volt hogy csinálni fog.
+        Csak aztán túlságosan is csinálta és
+        kitörölte magát mielőtt létrejött volna*/
+    torol: function () {
+        kosar.shift(this)
+        kosarprice-=ar
+        KosarDispl()
+    }
+}
+/*nem tudom miért hivatkozok a náci tankra "neuf"-ként,
+mikor nem is így hívják*/
+let neuf = {
+    nev: "Neubaufahrzeug",
+    hivo: cucc,
+    ar: 3452283999,
+    kep: "img/neuf.png",
+    kosarban: 0,
+    torol: function () {
+        kosar.shift(this)
+        kosarprice-=this.ar
+        KosarDispl()
+    }
+}
+let alekosz = {
+    nev: "Mercedes-Benz S 320 CDI, 2006",
+    hivo: cucc,
+    ar: 19726999,
+    kep: "img/mercedesz.jpg",
+    kosarban: 0,
+    torol: function () {
+        kosar.shift(this)
+        kosarprice-=this.ar
+        KosarDispl()
+    }
+}
+let drip = {
+    nev: "Teljes outfit",
+    hivo: cucc,
+    ar: 99999,
+    kep: "img/drip.jpg",
+    kosarban: 0,
+    torol: function () {
+        kosar.shift(this)
+        kosarprice-=this.ar
+        KosarDispl()
+    }
+}
+//akkor egy bohóc
+let csabi = {
+    nev: "Csovács Kaba cossplay",
+    hivo: cucc,
+    ar: 299,
+    kep: "img/csabi.jpg",
+    kosarban: 0,
 
+    torol: function () {
+        kosar.shift(this)
+        kosarprice-=this.ar
+        KosarDispl()
+    }
+}
+let kalap = {
+    nev: "Nemzeti szalmakalap",
+    hivo: cucc,
+    ar: 2435999,
+    kep: "img/kalap.png",
+    kosarban: 0,
+
+    torol: function () {
+        kosar.shift(this)
+        kosarprice-=this.ar
+        KosarDispl()
+    }
+}
+let erettsegi = {
+    nev: "Érettségi Bizonyítvány (nem lopott)",
+    hivo: cucc,
+    ar: 4999,
+    kep: "img/erettsegi.jpg",
+    kosarban: 0,
+
+    torol: function () {
+        kosar.shift(this)
+        kosarprice-=this.ar
+        KosarDispl()
+    }
+}
+/*Azt hogy a 15 éves kutya miért tanárnőként van a rendszerben,
+inkább fedje homály*/
+/* --- Utánnanéztem hogy kell írni a fedje szólt,
+ ha mégis látná a kutyus,
+legalább ebbe ne kössön bele*/
+let tanarno = {
+    nev: "15 éves qgya",
+    hivo: cucc,
+    ar: 0,
+    kep: "img/kutya.jpg",
+    kosarban: 0,
+
+
+    torol: function  () {
+        kosar.shift(this)
+        kosarprice-=this.ar
+        KosarDispl()
+    }
+
+}
 function Kosaradd(cucc) {
     console.log(cucc)
-//ADATOK
-    let toldi = {
-        nev: "Toldi II",
-        hivo: cucc,
-        ar: 1263542999,
-        kep: "img/Toldi2.png",
-        kosarban: 0,
 
-        torol: function () {
-            kosar.shift(this)
-            kosarprice-=ar
-            KosarDispl()
-        }
-    }
-    let neuf = {
-        nev: "Neubaufahrzeug",
-        hivo: cucc,
-        ar: 3452283999,
-        kep: "img/neuf.png",
-        kosarban: 0,
-        torol: function () {
-            kosar.shift(this)
-            kosarprice-=this.ar
-            KosarDispl()
-        }
-    }
-    let alekosz = {
-        nev: "Mercedes-Benz S 320 CDI, 2006",
-        hivo: cucc,
-        ar: 19726999,
-        kep: "img/mercedesz.jpg",
-        kosarban: 0,
-        torol: function () {
-            kosar.shift(this)
-            kosarprice-=this.ar
-            KosarDispl()
-        }
-    }
-    let drip = {
-        nev: "Teljes outfit",
-        hivo: cucc,
-        ar: 99999,
-        kep: "img/drip.jpg",
-        kosarban: 0,
-        torol: function () {
-            kosar.shift(this)
-            kosarprice-=this.ar
-            KosarDispl()
-        }
-    }
-    let csabi = {
-        nev: "Csovács Kaba cossplay",
-        hivo: cucc,
-        ar: 299,
-        kep: "img/csabi.jpg",
-        kosarban: 0,
-
-        torol: function () {
-            kosar.shift(this)
-            kosarprice-=this.ar
-            KosarDispl()
-        }
-    }
-    let kalap = {
-        nev: "Nemzeti szalmakalap",
-        hivo: cucc,
-        ar: 2435999,
-        kep: "img/kalap.png",
-        kosarban: 0,
-
-        torol: function () {
-            kosar.shift(this)
-            kosarprice-=this.ar
-            KosarDispl()
-        }
-    }
-    let erettsegi = {
-        nev: "Érettségi Bizonyítvány (nem lopott)",
-        hivo: cucc,
-        ar: 4999,
-        kep: "img/erettsegi.jpg",
-        kosarban: 0,
-
-        torol: function () {
-            kosar.shift(this)
-            kosarprice-=this.ar
-            KosarDispl()
-        }
-    }
-    let tanarno = {
-        nev: "15 éves qgya",
-        hivo: cucc,
-        ar: 0,
-        kep: "img/kutya.jpg",
-        kosarban: 0,
-
-
-        torol: function  () {
-            kosar.shift(this)
-            kosarprice-=this.ar
-            KosarDispl()
-        }
-
-    }
     if (cucc == "toldi"){
-
-        kosar.push(obj)
+        kosar.push(toldi)
+        toldi.kosarban++
     }else
     if (cucc == "neuf"){
         l
-        kosar.push(obj)
+        kosar.push(neuf)
+        neuf.kosarban++
 
     }else
     if (cucc == "alekosz"){
 
-        kosar.push(obj)
+        kosar.push(alekosz)
+        alekosz.kosarban++
     }else
     if (cucc == "drip"){
 
-        kosar.push(obj)
+        kosar.push(drip)
+        drip.kosarban++
     }else
     if (cucc == "csabi"){
 
-        kosar.push(obj)
+        kosar.push(csabi)
+        csabi.kosarban++
     }else
     if (cucc == "kalap"){
 
-        kosar.push(obj)
+        kosar.push(kalap)
+        kalap.kosarban++
     }else
     if (cucc == "erettsegi"){
 
-        kosar.push(obj)
-        kosarprice+=obj.ar
+        kosar.push(erettsegi)
+        erettsegi.kosarban++
     }else
     if (cucc == "tanarno"){
 
-        kosar.push(obj)
+        kosar.push(tanarno)
+        tanarno.kosarban++
+
 
 
     }else{
