@@ -13,7 +13,7 @@ function kikerdezett() {
 //TOLDI MIKLÓS KATONÁJA VAGYOK LEGSZEBB KATONÁÁÁÁJA
 let toldi = {
     nev: "Toldi II",
-    hivo: cucc,
+
     ar: 1263542999,
     kep: "img/Toldi2.png",
     kosarban: 0,
@@ -31,7 +31,7 @@ let toldi = {
 mikor nem is így hívják*/
 let neuf = {
     nev: "Neubaufahrzeug",
-    hivo: cucc,
+
     ar: 3452283999,
     kep: "img/neuf.png",
     kosarban: 0,
@@ -43,7 +43,7 @@ let neuf = {
 }
 let alekosz = {
     nev: "Mercedes-Benz S 320 CDI, 2006",
-    hivo: cucc,
+
     ar: 19726999,
     kep: "img/mercedesz.jpg",
     kosarban: 0,
@@ -55,7 +55,7 @@ let alekosz = {
 }
 let drip = {
     nev: "Teljes outfit",
-    hivo: cucc,
+
     ar: 99999,
     kep: "img/drip.jpg",
     kosarban: 0,
@@ -68,7 +68,7 @@ let drip = {
 //akkor egy bohóc
 let csabi = {
     nev: "Csovács Kaba cossplay",
-    hivo: cucc,
+
     ar: 299,
     kep: "img/csabi.jpg",
     kosarban: 0,
@@ -81,7 +81,7 @@ let csabi = {
 }
 let kalap = {
     nev: "Nemzeti szalmakalap",
-    hivo: cucc,
+
     ar: 2435999,
     kep: "img/kalap.png",
     kosarban: 0,
@@ -94,7 +94,7 @@ let kalap = {
 }
 let erettsegi = {
     nev: "Érettségi Bizonyítvány (nem lopott)",
-    hivo: cucc,
+
     ar: 4999,
     kep: "img/erettsegi.jpg",
     kosarban: 0,
@@ -112,7 +112,7 @@ inkább fedje homály*/
 legalább ebbe ne kössön bele*/
 let tanarno = {
     nev: "15 éves qgya",
-    hivo: cucc,
+
     ar: 0,
     kep: "img/kutya.jpg",
     kosarban: 0,
@@ -131,11 +131,13 @@ function Kosaradd(cucc) {
     if (cucc == "toldi"){
         kosar.push(toldi)
         toldi.kosarban++
+
     }else
     if (cucc == "neuf"){
         l
         kosar.push(neuf)
         neuf.kosarban++
+
 
     }else
     if (cucc == "alekosz"){
@@ -193,17 +195,26 @@ function Kosaradd(cucc) {
 document.getElementById("cartprice").innerHTML=kosarprice
 
 
-
+ar(cucc)
 KosarDispl()
+
 }
 function KosarDispl() {
-    document.getElementById("lista").innerHTML=""
-    console.log("frissult a lista")
-    for (let i=0; i<kosar.length;i++) {
-       let element=kosar[i]
-    document.getElementById("lista").innerHTML+=
 
-    }
+
+}
+function ar(params) {
+
+if (params == "toldi") cucc = toldi
+else if (params == "neuf") cucc= neuf
+else if (params == "alekosz") cucc= alekosz
+else if (params == "drip") cucc= drip
+else if (params == "csabi") cucc= csabi
+else if (params == "kalap") cucc= kalap
+else if (params == "erettsegi") cucc= erettsegi
+else if (params == "tanarno") cucc= tanarno
+
+document.getElementById(params+"ar").innerHTML= (cucc.ar*cucc.kosarban)+" Ft"
 
 }
 
