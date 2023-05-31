@@ -1,0 +1,13 @@
+.product__item__pic{
+    background-repeat: no-repeat ;
+}
+.fa-star-o{
+    content: "\f006";
+}
+.nr{
+    background-repeat: no-repeat;
+}
+.elem{
+    border-radius: 25px;
+    background-color:#e53637 ;
+}
