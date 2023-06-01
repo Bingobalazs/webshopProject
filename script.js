@@ -127,7 +127,16 @@ let tanarno = {
 }
 
 
+
+
+
+
+
+
+
+
 //Ez az előbb még működött. Most elvileg nem is létezik
+//Működik, szerintem a kosar listának már semmi értelme, viszont félek ha törlöm valami nem fog működni
 function Kosaradd(cucc) {
     console.log(cucc)
 
@@ -178,7 +187,6 @@ function Kosaradd(cucc) {
     }else{
         window.alert("nem tudom mi történt help")
     }
-
     /* HA a kosárban nincsen cuccos muccos akkor,
      Tompetinek nem kell elénekelnie a számos dalt*/
     if(kosar.length>0) document.getElementById("cartcount").innerHTML=kosar.length
@@ -195,6 +203,8 @@ function Kosaradd(cucc) {
     de az Epic Games is küld számlát a Fortnite-ról ha letöltjük
      */
 
+
+
 document.getElementById("cartprice").innerHTML=kosarprice
 
 
@@ -204,6 +214,7 @@ KosarDispl()
 }
 function KosarDispl() {
 
+        //Megjeleníti a kosárban lévő dolgokat
         if (toldi.kosarban > 0)     document.getElementById("toldi").style = "display: flex;"
         if (neuf.kosarban > 0)      document.getElementById("neuf").style = "display: flex;"
         if (alekosz.kosarban > 0)   document.getElementById("alekosz").style = "display: flex;"
@@ -213,7 +224,7 @@ function KosarDispl() {
         if (erettsegi.kosarban > 0) document.getElementById("erettsegi").style = "display: flex;"
         if (tanarno.kosarban > 0)   document.getElementById("tanarno").style = "display: flex;"
 
-
+        //nem jeleníti meg azt ami nincs a kosárban (kell, mert ha törlünk valamit el kell tűntetni)
         if (toldi.kosarban == 0) document.getElementById("toldi").style = "display: none;"
         if (neuf.kosarban == 0) document.getElementById("neuf").style = "display: none;"
         if (alekosz.kosarban == 0) document.getElementById("alekosz").style = "display: none;"
@@ -223,6 +234,7 @@ function KosarDispl() {
         if (erettsegi.kosarban == 0) document.getElementById("erettsegi").style = "display: none;"
         if (tanarno.kosarban == 0) document.getElementById("tanarno").style = "display: none;"
 
+    //beállítja a number típusú input mezőket az adott dolgok kosárban lévő számával
     document.getElementById("toldimenny").value = toldi.kosarban
     document.getElementById("neufmenny").value = neuf.kosarban
     document.getElementById("alekoszmenny").value = alekosz.kosarban
@@ -233,6 +245,21 @@ function KosarDispl() {
     document.getElementById("tanarnomenny").value = tanarno.kosarban
     document.getElementById("osszegzesar").value= kosarprice
 
+    /* HA a kosárban nincsen cuccos muccos akkor,
+    Tompetinek nem kell elénekelnie a számos dalt*/
+    if(kosar.length>0) document.getElementById("cartcount").innerHTML=kosar.length
+    else document.getElementById("cartcount").innerHTML=""
+
+    /*Kiszámolja a kosár tartalmának tartalmazó termékek hez tartozó árat,
+    megszorozza a árt a mennyiséggel amit a kosár tartalma tartalmaz
+    */
+    kosarprice = (neuf.ar*neuf.kosarban)+(toldi.ar*toldi.kosarban)
+        +(alekosz.ar*alekosz.kosarban)+(drip.ar*drip.kosarban)+
+        (csabi.ar*csabi.kosarban)+(kalap.ar*kalap.kosarban)+
+        (erettsegi.ar*erettsegi.kosarban)+(tanarno.ar*tanarno.kosarban)
+    /* na nem mintha az ingyenes item számítani,
+    de az Epic Games is küld számlát a Fortnite-ról ha letöltjük
+     */
 
 
 
@@ -337,6 +364,18 @@ function Kosarvesz(cucc, mennyiseg) {
     KosarDispl()
 }
 
+
+
+
+
+
+
+
+
+
+
+
+//NAVIGÁCIÓS FÜGGVÉNYEK
 function KosarhozVisz() {
     console.log("visz")
     document.getElementById("shop").style="display: none!important;"
