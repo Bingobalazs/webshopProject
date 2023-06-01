@@ -25,7 +25,7 @@
       <nav class="header__menu mobile-menu">
         <ul>
           <li ><a href="./index.html">Home</a></li>
-          <li class="active"><a href="./shop.html">Shop</a></li>
+          <li class="active"><a href="#" onclick="ShophozVisz()">Shop</a></li>
 
         </ul>
       </nav>
@@ -34,7 +34,7 @@
       <div class="header__nav__option">
         <a href="#" onclick="kikerdezett()" class="search-switch"><img src="img/icon/search.png" alt=""></a>
         <a href="fav.html"><img src="img/icon/heart.png" alt=""></a>
-        <a href="cart.html"><img src="img/icon/cart.png" alt=""> <span id="cartcount">0</span></a>
+        <a onclick="KosarhozVisz()" href="#"><img src="img/icon/cart.png" alt=""> <span id="cartcount">0</span></a>
         <div class="price" > <span id="cartprice">0</span> Ft</div>
       </div>
     </div>
@@ -44,7 +44,7 @@
 
 
 <!-- Product Section Begin -->
-<section class="product spad">
+<section class="product spad" id="shop">
   <div class="container">
     <div class="row">
 
@@ -226,75 +226,134 @@
     </div>
   </div>
 </section>
-<section class="feketeh">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="" id="kosar">
 <!-- Product Section End -->
-<div class="container kosar">
-  <div id="lista">
-    <div class="row" id="toldi">
-      <div class="col kep"><img src="img/Toldi2.png"></div>
-      <div class="col adat"><p class="nevek">Toldi II tank</p><p id="toldiar" class="arak"></p></div>
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('toldi')">+</button> <span id="toldimenny"></span> <button onclick="Kosarvesz('toldi')">-</button>
+  <!-- Breadcrumb Section Begin -->
+  <section class="breadcrumb-option">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb__text">
+            <h4>Shopping Cart</h4>
+            <div class="breadcrumb__links">
+              <a href="index.html">Home</a>
+              <a href="#" onclick="ShophozVisz()">Shop</a>
+              <span>Shopping Cart</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row" id="neuf">
-      <div class="col kep"><img src="img/neuf.png"></div>
-      <div class="col adat"><p class="nevek">Neubaufahrzeug</p><p id="neufar" class="arak"></p></div>
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('neuf')">+</button> <span id="neufmenny"></span> <button onclick="Kosarvesz('neuf')">-</button>
-      </div>
-    </div>
-    <div class="row" id="alekosz">
-      <div class="col kep"><img src="img/mercedesz.jpg"></div>
-      <div class="col adat"><p class="nevek">Mercedes-Benz S 320 CDI, 2006</p><p id="alekoszar" class="arak"></p></div>
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('alekosz')">+</button> <span id="alekoszmenny"></span> <button onclick="Kosarvesz('alekosz')">-</button>
-      </div>
-    </div>
-    <div class="row" id="drip">
-      <div class="col kep"><img src="img/drip.jpg"></div>
-      <div class="col adat"><p class="nevek">Teljes outfit</p><p id="dripar" class="arak"></p></div>
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('drip')">+</button> <span id="dripmenny"></span> <button onclick="Kosarvesz('drip')">-</button>
-      </div>
-    </div>
-    <div class="row" id="csabi">
-      <div class="col kep"><img src="img/csabi.jpg"></div>
-      <div class="col adat"><p class="nevek">Csovács Kaba cossplay</p><p id="csabiar" class="arak"></p></div>
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('csabi')">+</button> <span id="csabimenny"></span> <button onclick="Kosarvesz('csabi')">-</button>
-      </div>
-    </div>
-    <div class="row" id="kalap">
-      <div class="col kep"><img src="img/kalap.png"></div>
-      <div class="col adat"><p class="nevek">Nemzeti szalmakalap</p><p id="kalapar" class="arak"></p></div>
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('kalap')">+</button> <span id="kalapmenny"></span> <button onclick="Kosarvesz('kalap')">-</button>
-      </div>
-    </div>
-    <div class="row" id="erettsegi">
-      <div class="col kep"><img src="img/erettsegi.jpg"></div>
-      <div class="col adat"><p class="nevek">Érettségi Bizonyítvány</p><p id="erettsegiar" class="arak"></p></div>
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('erettsegi')">+</button> <span id="erettsegimenny"></span> <button onclick="Kosarvesz('erettsegi')">-</button>
-      </div>
-    </div>
-    <div class="row" id="tanarno">
-      <div class="col kep"><img src="img/kutya.jpg"></div>
-      <div class="col adat"><p class="nevek">15 Éves kutya</p><p id="tanarnoar" class="arak"></p></div>
+  </section>
+  <!-- Breadcrumb Section End -->
 
-      <div class="col mennyiseg">
-        <button onclick="Kosaradd('tanarno')">+</button> <span id="tanarnomenny"></span> <button onclick="Kosarvesz('tanarno')">-</button>
+
+
+  <!-- Shopping Cart Section Begin -->
+  <section class="shopping-cart spad">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="shopping__cart__table">
+            <table>
+              <thead>
+              <tr>
+                <th>Termék</th>
+                <th>Mennyiség</th>
+                <th>Összesen</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr id="toldi">
+                <td class="product__cart__item">
+                  <div class="product__cart__item__pic">
+                    <img src="img/Toldi2.png" alt="">
+                  </div>
+                  <div class="product__cart__item__text">
+                    <h6>Toldi II tank</h6>
+                    <h5>1 263 542 999 Ft</h5>
+                  </div>
+                </td>
+                <td class="quantity__item">
+                  <div class="quantity">
+                    <div class="pro-qty-2">
+                      <input type="text" value="1" id="toldimenny" onchange="Updatemennyiseg()">
+                    </div>
+                  </div>
+                </td>
+                <td class="cart__price" id="toldiar" >5484</td>
+                <td class="cart__close"><i class="fa fa-close"></i></td>
+              </tr>
+
+
+
+
+              </tbody>
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="continue__btn">
+                <a href="#" onclick="ShophozVisz">Vásárlás folytatása</a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="continue__btn update__btn">
+                <a href="#" onclick="KosarDispl()"><i class="fa fa-spinner"></i> Kosár frissítése</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="cart__total">
+            <h6>Összeg</h6>
+            <ul>
+              <li>Részösszeg <span id="reszosszeg">0</span></li>
+              <li>Összesen <span id="osszegzesar">0</span></li>
+            </ul>
+            <a href="#" class="primary-btn">Vásárlás</a>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+  <!-- Shopping Cart Section End -->
 
-  </div>
 
-</div>
-  <div id="osszegzes" style="align-content: center">
-    <p> Fizetendő: <span id="osszegzesar"></span> Ft</p>
-    <button onclick="Rendeles()">Tovább</button>
-  </div>
+
+
+
+</section>
+<section id="rendeles">
+
+
 </section>
 </body>
 </html>

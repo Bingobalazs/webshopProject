@@ -65,3 +65,15 @@ button{
     font-size: 16px;
     margin: 4px 2px;
 }
+#kosar{
+    display: none;
+    min-height: 100vh;
+}
+html{
+    min-height: 100vh;
+}
+#osszegzes{
+    padding-top: 70px;
+    color: #e53637;
+    text-align: center;
+}

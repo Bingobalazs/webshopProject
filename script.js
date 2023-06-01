@@ -223,27 +223,43 @@ function KosarDispl() {
         if (erettsegi.kosarban == 0) document.getElementById("erettsegi").style = "display: none;"
         if (tanarno.kosarban == 0) document.getElementById("tanarno").style = "display: none;"
 
-if (toldi.kosarban > 0)document.getElementById("toldimenny").innerHTML = toldi.kosarban
-if (neuf.kosarban > 0)        document.getElementById("neufmenny").innerHTML = neuf.kosarban
-
-    if (alekosz.kosarban > 0)        document.getElementById("alekoszmenny").innerHTML = alekosz.kosarban
-
-    if (drip.kosarban > 0)        document.getElementById("dripmenny").innerHTML = drip.kosarban
-
-    if (csabi.kosarban > 0)        document.getElementById("csabimenny").innerHTML = csabi.kosarban
-
-    if (kalap.kosarban > 0)        document.getElementById("kalapmenny").innerHTML = kalap.kosarban
-
-    if (erettsegi.kosarban > 0)        document.getElementById("erettsegimenny").innerHTML = erettsegi.kosarban
-
-    if (tanarno.kosarban > 0)          document.getElementById("tanarnomenny").innerHTML = tanarno.kosarban
+    document.getElementById("toldimenny").value = toldi.kosarban
+    document.getElementById("neufmenny").value = neuf.kosarban
+    document.getElementById("alekoszmenny").value = alekosz.kosarban
+    document.getElementById("dripmenny").value = drip.kosarban
+    document.getElementById("csabimenny").value = csabi.kosarban
+    document.getElementById("kalapmenny").value = kalap.kosarban
+    document.getElementById("erettsegimenny").value = erettsegi.kosarban
+    document.getElementById("tanarnomenny").value = tanarno.kosarban
+    document.getElementById("osszegzesar").value= kosarprice
 
 
 
 
 }
-function ar(params) {
+function Updatemennyiseg() {
+    toldi.kosarban      = parseInt(document.getElementById("toldimenny").value)
+/*
+    neuf.kosarban       = parseInt(document.getElementById("neufmenny").value)
+    alekosz.kosarban    = parseInt(document.getElementById("alekoszmenny").value)
+    drip.kosarban       = parseInt(document.getElementById("dripmenny").value)
+    csabi.kosarban      = parseInt(document.getElementById("csabimenny").value)
+    kalap.kosarban      = parseInt(document.getElementById("kalapmenny").value)
+    erettsegi.kosarban  = parseInt(document.getElementById("erettsegimenny").value)
+    tanarno.kosarban    = parseInt(document.getElementById("tanarnomenny").value)
 
+ */
+    ar(toldi)
+    ar(neuf)
+    ar(alekosz)
+    ar(drip)
+    ar(csabi)
+    ar(kalap)
+    ar(erettsegi)
+    ar(tanarno)
+}
+function ar(params) {
+/*
 if (params == "toldi") cucc = toldi
 else if (params == "neuf") cucc= neuf
 else if (params == "alekosz") cucc= alekosz
@@ -254,54 +270,63 @@ else if (params == "erettsegi") cucc= erettsegi
 else if (params == "tanarno") cucc= tanarno
 
 document.getElementById(params+"ar").innerHTML= (cucc.ar*cucc.kosarban)+" Ft"
-
+*/
     console.log(params+"ar")
+
+    document.getElementById("toldiar").innerHTML = toldi.kosarban*toldi.ar
+    document.getElementById("neufar").innerHTML = neuf.kosarban*neuf.ar
+    document.getElementById("alekoszar").innerHTML = alekosz.kosarban*alekosz.ar
+    document.getElementById("dripar").innerHTML = drip.kosarban*drip.ar
+    document.getElementById("csabiar").innerHTML = csabi.kosarban*csabi.ar
+    document.getElementById("kalapar").innerHTML = kalap.kosarban*kalap.ar
+    document.getElementById("erettsegiar").innerHTML = erettsegi.kosarban*erettsegi.ar
+    document.getElementById("tanarnoar").innerHTML = tanarno.kosarban*tanarno.ar
 }
 
-function Kosarvesz(cucc) {
+function Kosarvesz(cucc, mennyiseg) {
     console.log(cucc)
 
     if (cucc === "toldi"){
         kosar.shift(toldi)
-        toldi.kosarban--
+        toldi.kosarban=mennyiseg
 
     }else
     if (cucc === "neuf"){
 
         kosar.shift(neuf)
-        neuf.kosarban--
+        neuf.kosarban=mennyiseg
 
 
     }else
     if (cucc === "alekosz"){
 
         kosar.shift(alekosz)
-        alekosz.kosarban--
+        alekosz.kosarban=mennyiseg
     }else
     if (cucc === "drip"){
 
         kosar.shift(drip)
-        drip.kosarban--
+        drip.kosarban=mennyiseg
     }else
     if (cucc === "csabi"){
 
         kosar.shift(csabi)
-        csabi.kosarban--
+        csabi.kosarban=mennyiseg
     }else
     if (cucc === "kalap"){
 
         kosar.shift(kalap)
-        kalap.kosarban--
+        kalap.kosarban=mennyiseg
     }else
     if (cucc === "erettsegi"){
 
         kosar.shift(erettsegi)
-        erettsegi.kosarban--
+        erettsegi.kosarban=mennyiseg
     }else
     if (cucc === "tanarno"){
 
         kosar.shift(tanarno)
-        tanarno.kosarban--
+        tanarno.kosarban=mennyiseg
 
 
 
@@ -312,5 +337,21 @@ function Kosarvesz(cucc) {
     KosarDispl()
 }
 
-
-
+function KosarhozVisz() {
+    console.log("visz")
+    document.getElementById("shop").style="display: none!important;"
+    document.getElementById("kosar").style="display: block!important;"
+    document.getElementById("rendeles").style="display: none!important;"
+}
+function ShophozVisz() {
+    console.log("visz")
+    document.getElementById("kosar").style="display: none!important;"
+    document.getElementById("shop").style="display: block!important;"
+    document.getElementById("rendeles").style="display: none!important;"
+}
+function Rendeles() {
+    console.log("visz")
+    document.getElementById("kosar").style="display: none!important;"
+    document.getElementById("shop").style="display: none!important;"
+    document.getElementById("rendeles").style="display: block!important;"
+}
