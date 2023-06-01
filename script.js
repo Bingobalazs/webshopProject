@@ -200,7 +200,15 @@ KosarDispl()
 
 }
 function KosarDispl() {
-
+    for (let i = 0; i < 8; i++) {
+        if (toldi.kosarban>0)document.getElementById("toldi").style="display: block;"
+        else if (neuf.kosarban>0) document.getElementById("neuf").style="display: block;"
+        else if (alekosz.kosarban>0) document.getElementById("alekosz").style="display: block;"
+        else if (drip.kosarban>0) document.getElementById("drip").style="display: block;"
+        else if (csabi.kosarban>0) document.getElementById("csabi").style="display: block;"
+        else if (kalap.kosarban>0) document.getElementById("kalap").style="display: block;"
+        else if (erettsegi.kosarban>0) document.getElementById("erettsegi").style="display: block;"
+        else if (tanarno.kosarban>0) document.getElementById("tanarno").style="display: block;"
 
 }
 function ar(params) {
@@ -216,6 +224,7 @@ else if (params == "tanarno") cucc= tanarno
 
 document.getElementById(params+"ar").innerHTML= (cucc.ar*cucc.kosarban)+" Ft"
 
-}
+    console.log(params+"ar")
+    }
 
 

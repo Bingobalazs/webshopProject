@@ -11,3 +11,37 @@
     border-radius: 25px;
     background-color:#e53637 ;
 }
+#lista > .row{
+    border-radius: 25px;
+    background-color:white ;
+    margin-top: 30px;
+}
+.kep{
+padding: 10px;
+
+}
+.kep > img{
+    border-radius: 25px;
+    height: 100px;
+    width: 200px;
+    object-fit: cover;
+
+}
+.adat{
+
+    padding-top: 20px;
+}
+.nevek{
+    font-weight: bold;
+    font-size: 2vh;
+    color: #e53637!important;
+}
+.arak{
+    color: black;
+    font-weight: bold;
+}
+.feketeh{
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
