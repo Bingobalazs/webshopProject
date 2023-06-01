@@ -233,45 +233,68 @@
     <div class="row" id="toldi">
       <div class="col kep"><img src="img/Toldi2.png"></div>
       <div class="col adat"><p class="nevek">Toldi II tank</p><p id="toldiar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('toldi')">+</button> <span id="toldimenny"></span> <button onclick="Kosarvesz('toldi')">-</button>
+      </div>
     </div>
     <div class="row" id="neuf">
       <div class="col kep"><img src="img/neuf.png"></div>
       <div class="col adat"><p class="nevek">Neubaufahrzeug</p><p id="neufar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('neuf')">+</button> <span id="neufmenny"></span> <button onclick="Kosarvesz('neuf')">-</button>
+      </div>
     </div>
     <div class="row" id="alekosz">
       <div class="col kep"><img src="img/mercedesz.jpg"></div>
       <div class="col adat"><p class="nevek">Mercedes-Benz S 320 CDI, 2006</p><p id="alekoszar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('alekosz')">+</button> <span id="alekoszmenny"></span> <button onclick="Kosarvesz('alekosz')">-</button>
+      </div>
     </div>
     <div class="row" id="drip">
       <div class="col kep"><img src="img/drip.jpg"></div>
       <div class="col adat"><p class="nevek">Teljes outfit</p><p id="dripar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('drip')">+</button> <span id="dripmenny"></span> <button onclick="Kosarvesz('drip')">-</button>
+      </div>
     </div>
     <div class="row" id="csabi">
       <div class="col kep"><img src="img/csabi.jpg"></div>
       <div class="col adat"><p class="nevek">Csovács Kaba cossplay</p><p id="csabiar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('csabi')">+</button> <span id="csabimenny"></span> <button onclick="Kosarvesz('csabi')">-</button>
+      </div>
     </div>
     <div class="row" id="kalap">
       <div class="col kep"><img src="img/kalap.png"></div>
       <div class="col adat"><p class="nevek">Nemzeti szalmakalap</p><p id="kalapar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('kalap')">+</button> <span id="kalapmenny"></span> <button onclick="Kosarvesz('kalap')">-</button>
+      </div>
     </div>
     <div class="row" id="erettsegi">
       <div class="col kep"><img src="img/erettsegi.jpg"></div>
       <div class="col adat"><p class="nevek">Érettségi Bizonyítvány</p><p id="erettsegiar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('erettsegi')">+</button> <span id="erettsegimenny"></span> <button onclick="Kosarvesz('erettsegi')">-</button>
+      </div>
     </div>
     <div class="row" id="tanarno">
       <div class="col kep"><img src="img/kutya.jpg"></div>
       <div class="col adat"><p class="nevek">15 Éves kutya</p><p id="tanarnoar" class="arak"></p></div>
-      <div class="col mennyiseg"></div>
+
+      <div class="col mennyiseg">
+        <button onclick="Kosaradd('tanarno')">+</button> <span id="tanarnomenny"></span> <button onclick="Kosarvesz('tanarno')">-</button>
+      </div>
     </div>
+
   </div>
+
 </div>
+  <div id="osszegzes" style="align-content: center">
+    <p> Fizetendő: <span id="osszegzesar"></span> Ft</p>
+    <button onclick="Rendeles()">Tovább</button>
+  </div>
 </section>
 </body>
 </html>

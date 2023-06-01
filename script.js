@@ -125,47 +125,50 @@ let tanarno = {
     }
 
 }
+
+
+//Ez az előbb még működött. Most elvileg nem is létezik
 function Kosaradd(cucc) {
     console.log(cucc)
 
-    if (cucc == "toldi"){
+    if (cucc === "toldi"){
         kosar.push(toldi)
         toldi.kosarban++
 
     }else
-    if (cucc == "neuf"){
-        l
+    if (cucc === "neuf"){
+
         kosar.push(neuf)
         neuf.kosarban++
 
 
     }else
-    if (cucc == "alekosz"){
+    if (cucc === "alekosz"){
 
         kosar.push(alekosz)
         alekosz.kosarban++
     }else
-    if (cucc == "drip"){
+    if (cucc === "drip"){
 
         kosar.push(drip)
         drip.kosarban++
     }else
-    if (cucc == "csabi"){
+    if (cucc === "csabi"){
 
         kosar.push(csabi)
         csabi.kosarban++
     }else
-    if (cucc == "kalap"){
+    if (cucc === "kalap"){
 
         kosar.push(kalap)
         kalap.kosarban++
     }else
-    if (cucc == "erettsegi"){
+    if (cucc === "erettsegi"){
 
         kosar.push(erettsegi)
         erettsegi.kosarban++
     }else
-    if (cucc == "tanarno"){
+    if (cucc === "tanarno"){
 
         kosar.push(tanarno)
         tanarno.kosarban++
@@ -200,15 +203,43 @@ KosarDispl()
 
 }
 function KosarDispl() {
-    for (let i = 0; i < 8; i++) {
-        if (toldi.kosarban>0)document.getElementById("toldi").style="display: block;"
-        else if (neuf.kosarban>0) document.getElementById("neuf").style="display: block;"
-        else if (alekosz.kosarban>0) document.getElementById("alekosz").style="display: block;"
-        else if (drip.kosarban>0) document.getElementById("drip").style="display: block;"
-        else if (csabi.kosarban>0) document.getElementById("csabi").style="display: block;"
-        else if (kalap.kosarban>0) document.getElementById("kalap").style="display: block;"
-        else if (erettsegi.kosarban>0) document.getElementById("erettsegi").style="display: block;"
-        else if (tanarno.kosarban>0) document.getElementById("tanarno").style="display: block;"
+
+        if (toldi.kosarban > 0)     document.getElementById("toldi").style = "display: flex;"
+        if (neuf.kosarban > 0)      document.getElementById("neuf").style = "display: flex;"
+        if (alekosz.kosarban > 0)   document.getElementById("alekosz").style = "display: flex;"
+        if (drip.kosarban > 0)      document.getElementById("drip").style = "display: flex;"
+        if (csabi.kosarban > 0)     document.getElementById("csabi").style = "display: flex;"
+        if (kalap.kosarban > 0)     document.getElementById("kalap").style = "display: flex;"
+        if (erettsegi.kosarban > 0) document.getElementById("erettsegi").style = "display: flex;"
+        if (tanarno.kosarban > 0)   document.getElementById("tanarno").style = "display: flex;"
+
+
+        if (toldi.kosarban == 0) document.getElementById("toldi").style = "display: none;"
+        if (neuf.kosarban == 0) document.getElementById("neuf").style = "display: none;"
+        if (alekosz.kosarban == 0) document.getElementById("alekosz").style = "display: none;"
+        if (drip.kosarban == 0) document.getElementById("drip").style = "display: none;"
+        if (csabi.kosarban == 0) document.getElementById("csabi").style = "display: none;"
+        if (kalap.kosarban == 0) document.getElementById("kalap").style = "display: none;"
+        if (erettsegi.kosarban == 0) document.getElementById("erettsegi").style = "display: none;"
+        if (tanarno.kosarban == 0) document.getElementById("tanarno").style = "display: none;"
+
+if (toldi.kosarban > 0)document.getElementById("toldimenny").innerHTML = toldi.kosarban
+if (neuf.kosarban > 0)        document.getElementById("neufmenny").innerHTML = neuf.kosarban
+
+    if (alekosz.kosarban > 0)        document.getElementById("alekoszmenny").innerHTML = alekosz.kosarban
+
+    if (drip.kosarban > 0)        document.getElementById("dripmenny").innerHTML = drip.kosarban
+
+    if (csabi.kosarban > 0)        document.getElementById("csabimenny").innerHTML = csabi.kosarban
+
+    if (kalap.kosarban > 0)        document.getElementById("kalapmenny").innerHTML = kalap.kosarban
+
+    if (erettsegi.kosarban > 0)        document.getElementById("erettsegimenny").innerHTML = erettsegi.kosarban
+
+    if (tanarno.kosarban > 0)          document.getElementById("tanarnomenny").innerHTML = tanarno.kosarban
+
+
+
 
 }
 function ar(params) {
@@ -225,6 +256,61 @@ else if (params == "tanarno") cucc= tanarno
 document.getElementById(params+"ar").innerHTML= (cucc.ar*cucc.kosarban)+" Ft"
 
     console.log(params+"ar")
+}
+
+function Kosarvesz(cucc) {
+    console.log(cucc)
+
+    if (cucc === "toldi"){
+        kosar.shift(toldi)
+        toldi.kosarban--
+
+    }else
+    if (cucc === "neuf"){
+
+        kosar.shift(neuf)
+        neuf.kosarban--
+
+
+    }else
+    if (cucc === "alekosz"){
+
+        kosar.shift(alekosz)
+        alekosz.kosarban--
+    }else
+    if (cucc === "drip"){
+
+        kosar.shift(drip)
+        drip.kosarban--
+    }else
+    if (cucc === "csabi"){
+
+        kosar.shift(csabi)
+        csabi.kosarban--
+    }else
+    if (cucc === "kalap"){
+
+        kosar.shift(kalap)
+        kalap.kosarban--
+    }else
+    if (cucc === "erettsegi"){
+
+        kosar.shift(erettsegi)
+        erettsegi.kosarban--
+    }else
+    if (cucc === "tanarno"){
+
+        kosar.shift(tanarno)
+        tanarno.kosarban--
+
+
+
+    }else{
+        window.alert("nem tudom mi történt help")
     }
+    ar(cucc)
+    KosarDispl()
+}
+
 
 
