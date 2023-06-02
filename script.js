@@ -214,6 +214,10 @@ KosarDispl()
 }
 function KosarDispl() {
 
+    document.getElementById("cartprice").innerHTML=kosarprice
+    if(kosar.length>0) document.getElementById("cartcount").innerHTML=kosar.length
+    else document.getElementById("cartcount").innerHTML=""
+
         //Megjeleníti a kosárban lévő dolgokat
         if (toldi.kosarban > 0)     document.getElementById("toldi").style = "display: flex;"
         if (neuf.kosarban > 0)      document.getElementById("neuf").style = "display: flex;"
@@ -226,6 +230,7 @@ function KosarDispl() {
 
         //nem jeleníti meg azt ami nincs a kosárban (kell, mert ha törlünk valamit el kell tűntetni)
         if (toldi.kosarban == 0) document.getElementById("toldi").style = "display: none;"
+        
         if (neuf.kosarban == 0) document.getElementById("neuf").style = "display: none;"
         if (alekosz.kosarban == 0) document.getElementById("alekosz").style = "display: none;"
         if (drip.kosarban == 0) document.getElementById("drip").style = "display: none;"
@@ -233,9 +238,11 @@ function KosarDispl() {
         if (kalap.kosarban == 0) document.getElementById("kalap").style = "display: none;"
         if (erettsegi.kosarban == 0) document.getElementById("erettsegi").style = "display: none;"
         if (tanarno.kosarban == 0) document.getElementById("tanarno").style = "display: none;"
+        
 
     //beállítja a number típusú input mezőket az adott dolgok kosárban lévő számával
     document.getElementById("toldimenny").value = toldi.kosarban
+    
     document.getElementById("neufmenny").value = neuf.kosarban
     document.getElementById("alekoszmenny").value = alekosz.kosarban
     document.getElementById("dripmenny").value = drip.kosarban
@@ -244,6 +251,7 @@ function KosarDispl() {
     document.getElementById("erettsegimenny").value = erettsegi.kosarban
     document.getElementById("tanarnomenny").value = tanarno.kosarban
     document.getElementById("osszegzesar").value= kosarprice
+    
 
     /* HA a kosárban nincsen cuccos muccos akkor,
     Tompetinek nem kell elénekelnie a számos dalt*/
@@ -261,12 +269,12 @@ function KosarDispl() {
     de az Epic Games is küld számlát a Fortnite-ról ha letöltjük
      */
 
-
+Updatemennyiseg()
 
 }
 function Updatemennyiseg() {
     toldi.kosarban      = parseInt(document.getElementById("toldimenny").value)
-/*
+
     neuf.kosarban       = parseInt(document.getElementById("neufmenny").value)
     alekosz.kosarban    = parseInt(document.getElementById("alekoszmenny").value)
     drip.kosarban       = parseInt(document.getElementById("dripmenny").value)
@@ -275,7 +283,7 @@ function Updatemennyiseg() {
     erettsegi.kosarban  = parseInt(document.getElementById("erettsegimenny").value)
     tanarno.kosarban    = parseInt(document.getElementById("tanarnomenny").value)
 
- */
+ 
     ar(toldi)
     ar(neuf)
     ar(alekosz)
@@ -301,6 +309,7 @@ document.getElementById(params+"ar").innerHTML= (cucc.ar*cucc.kosarban)+" Ft"
     console.log(params+"ar")
 
     document.getElementById("toldiar").innerHTML = toldi.kosarban*toldi.ar
+    
     document.getElementById("neufar").innerHTML = neuf.kosarban*neuf.ar
     document.getElementById("alekoszar").innerHTML = alekosz.kosarban*alekosz.ar
     document.getElementById("dripar").innerHTML = drip.kosarban*drip.ar
@@ -308,6 +317,7 @@ document.getElementById(params+"ar").innerHTML= (cucc.ar*cucc.kosarban)+" Ft"
     document.getElementById("kalapar").innerHTML = kalap.kosarban*kalap.ar
     document.getElementById("erettsegiar").innerHTML = erettsegi.kosarban*erettsegi.ar
     document.getElementById("tanarnoar").innerHTML = tanarno.kosarban*tanarno.ar
+    
 }
 
 function Kosarvesz(cucc, mennyiseg) {
