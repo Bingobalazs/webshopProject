@@ -34,7 +34,7 @@
       <div class="header__nav__option">
         <a href="#" onclick="kikerdezett()" class="search-switch"><img src="img/icon/search.png" alt=""></a>
         <a href="fav.html"><img src="img/icon/heart.png" alt=""></a>
-        <a onclick="Rendeles()" href="#"><img src="img/icon/cart.png" alt=""> <span id="cartcount">0</span></a>
+        <a onclick="KosarhozVisz()" href="#"><img src="img/icon/cart.png" alt=""> <span id="cartcount">0</span></a>
         <div class="price" > <span id="cartprice">0</span> Ft</div>
       </div>
     </div>
@@ -401,7 +401,7 @@
               <tr id="csabi">
                 <td class="product__cart__item">
                   <div class="product__cart__item__pic">
-                    <img src="img/mercedesz.jpg" alt="">
+                    <img src="img/csabi.jpg" alt="">
                   </div>
                   <div class="product__cart__item__text">
                     <h6>Csovács Kaba cossplay
@@ -423,7 +423,7 @@
               <tr id="kalap">
                 <td class="product__cart__item">
                   <div class="product__cart__item__pic">
-                    <img src="img/mercedesz.jpg" alt="">
+                    <img src="img/kalap.png" alt="">
                   </div>
                   <div class="product__cart__item__text">
                     <h6>Nemzeti szalmakalap
@@ -434,14 +434,57 @@
                 <td class="quantity__item">
                   <div class="quantity">
                     <div class="pro-qty-2">
-                      <input type="number" value="1" id="alekoszmenny" onchange="Updatemennyiseg()">
+                      <input type="number" value="1" id="kalapmenny" onchange="Updatemennyiseg()">
                     </div>
                   </div>
                 </td>
-                <td class="cart__price" id="alekoszar" >5484</td>
+                <td class="cart__price" id="kalapar" >5484</td>
                 <td class="cart__close"><i class="fa fa-close"></i></td>
               </tr>
 
+              <tr id="erettsegi">
+                <td class="product__cart__item">
+                  <div class="product__cart__item__pic">
+                    <img src="img/erettsegi.jpg" alt="">
+                  </div>
+                  <div class="product__cart__item__text">
+                    <h6>Érettségi bizonyítvány
+                      </h6>
+                    <h5>4 999 Ft</h5>
+                  </div>
+                </td>
+                <td class="quantity__item">
+                  <div class="quantity">
+                    <div class="pro-qty-2">
+                      <input type="number" value="1" id="erettsegimenny" onchange="Updatemennyiseg()">
+                    </div>
+                  </div>
+                </td>
+                <td class="cart__price" id="erettsegiar" >4999</td>
+                <td class="cart__close"><i class="fa fa-close"></i></td>
+              </tr>
+
+              <tr id="tanarno">
+                <td class="product__cart__item">
+                  <div class="product__cart__item__pic">
+                    <img src="img/kutya.jpg" alt="">
+                  </div>
+                  <div class="product__cart__item__text">
+                    <h6>15 éves kutya
+                      </h6>
+                    <h5>0 Ft</h5>
+                  </div>
+                </td>
+                <td class="quantity__item">
+                  <div class="quantity">
+                    <div class="pro-qty-2">
+                      <input type="number" value="1" id="tanarnomenny" onchange="Updatemennyiseg()">
+                    </div>
+                  </div>
+                </td>
+                <td class="cart__price" id="tanarnoar" >0</td>
+                <td class="cart__close"><i class="fa fa-close"></i></td>
+              </tr>
 
               </tbody>
             </table>
@@ -479,7 +522,7 @@
 
 
 </section>
-<section id="rendeles">
+
 
 
 
@@ -487,7 +530,7 @@
 
 
    <!-- Checkout Section Begin -->
-   <section class="checkout spad">
+   <section class="checkout spad"  id="rendeles" >
     <div class="container">
         <div class="checkout__form">
             <form action="#">
@@ -617,7 +660,7 @@
 <!-- Checkout Section End -->
 
 
-</section>
+
 </body>
 </html>
 <script src="script.js"></script>

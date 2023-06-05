@@ -292,6 +292,7 @@ function Updatemennyiseg() {
     ar(kalap)
     ar(erettsegi)
     ar(tanarno)
+    KosarDispl()
 }
 function ar(params) {
 /*
