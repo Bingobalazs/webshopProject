@@ -9,7 +9,8 @@ function kikerdezett() {
 
     console.log("page loaded")
    let kosararak=[]
-   let szallitas = 0
+   let szallitasar = 0
+   let plusz = false
 //ADATOK
 //TOLDI MIKLÓS KATONÁJA VAGYOK LEGSZEBB KATONÁÁÁÁJA
 let toldi = {
@@ -265,7 +266,9 @@ function KosarDispl() {
     kosarprice = (neuf.ar*neuf.kosarban)+(toldi.ar*toldi.kosarban)
         +(alekosz.ar*alekosz.kosarban)+(drip.ar*drip.kosarban)+
         (csabi.ar*csabi.kosarban)+(kalap.ar*kalap.kosarban)+
-        (erettsegi.ar*erettsegi.kosarban)+(tanarno.ar*tanarno.kosarban)+szallitas
+        (erettsegi.ar*erettsegi.kosarban)+(tanarno.ar*tanarno.kosarban)
+
+    osszegar = kosarprice+Szallitas()+Fizetype()
     /* na nem mintha az ingyenes item számítani,
     de az Epic Games is küld számlát a Fortnite-ról ha letöltjük
      */
@@ -279,10 +282,10 @@ function KosarDispl() {
     erettsegi.kosarban  = parseInt(document.getElementById("erettsegimenny").value)
     tanarno.kosarban    = parseInt(document.getElementById("tanarnomenny").value)
 
-    document.getElementById("osszegzesar").innerHTML= kosarprice.toLocaleString()+" Ft"
+    document.getElementById("osszegzesar").innerHTML= osszegar.toLocaleString()+" Ft"
     document.getElementById("reszosszeg").innerHTML= kosarprice.toLocaleString()+" Ft"
     document.getElementById("rendelesresz").innerHTML= kosarprice.toLocaleString()+" Ft"
-    document.getElementById("rendelesar").innerHTML= kosarprice.toLocaleString()+" Ft"
+    document.getElementById("rendelesar").innerHTML= osszegar.toLocaleString()+" Ft"
  
 
     ar(toldi)
@@ -322,6 +325,29 @@ function Updatemennyiseg() {
     ar(tanarno)
     
 }
+
+//A FIZETÉS ÉS A SZÁLLÍTÁS UTÁNNI PLUSZ KÖLTSÉGEK
+function Szallitas() {
+    if (kosarprice>20000) {
+        
+        return 0
+        
+    } else {
+        
+        
+        return 1499
+    }
+}
+function Fizetype() {
+    if (plusz) {
+        return 1499
+    } else {
+        return 0
+    }
+}
+setInterval(KosarDispl, 100)
+
+
 function ar(params) {
 /*
 if (params == "toldi") cucc = toldi
