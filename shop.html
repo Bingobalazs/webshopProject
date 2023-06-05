@@ -283,12 +283,7 @@
           <div class="shopping__cart__table">
             <table>
               <thead>
-              <tr>
-                <th>Termék</th>
-                <th>Mennyiség</th>
-                <th>Összesen</th>
-                <th></th>
-              </tr>
+             
               </thead>
               <tbody>
               <tr id="toldi">
@@ -506,10 +501,10 @@
           <div class="cart__total">
             <h6>Összeg</h6>
             <ul>
-              <li>Részösszeg <span id="reszosszeg">0</span></li>
-              <li>Összesen <span id="osszegzesar">0</span></li>
+              <li>Részösszeg <p id="reszosszeg">0</p>Ft</li>
+              <li>Összesen <p id="osszegzesar">0</p>Ft</li>
             </ul>
-            <a href="#" class="primary-btn">Vásárlás</a>
+            <a href="#" class="primary-btn" onclick="Rendeles()">Vásárlás</a>
           </div>
         </div>
       </div>
@@ -536,7 +531,7 @@
             <form action="#">
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
-                        <h6 class="coupon__code"><span class="icon_tag_alt"></span> Van kuponod? <a href="#">Kattints ide </a> hogy beírd a kódot</h6>
+                        <h6 class="coupon__code"><span class="icon_tag_alt"></span> Van kuponod? <a href="#" onclick="window.alert('Még nekünk sincs he')">Kattints ide </a> hogy beírd a kódot</h6>
                         <h6 class="checkout__title">Számlázási adatok</h6>
                         <div class="row">
                             <div class="col-lg-6">
@@ -558,8 +553,8 @@
                         </div>
                         <div class="checkout__input">
                             <p>Cím<span>*</span></p>
-                            <input type="text" placeholder="Street Address" class="checkout__input__add">
-                            <input type="text" placeholder="Apartment, suite, unite ect (optinal)">
+                            <input type="text" placeholder="Utca, házszám" class="checkout__input__add">
+                            <input type="text" placeholder="Lakás, kiegészítés (opcionális)">
                         </div>
                         <div class="checkout__input">
                             <p>Település<span>*</span></p>
@@ -614,17 +609,11 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="checkout__order">
-                            <h4 class="order__title">Rendelésed</h4>
-                            <div class="checkout__order__products">Termék <span>Összeg</span></div>
-                            <ul class="checkout__total__products">
-                                <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
-                                <li>02. German chocolate <span>$ 170.0</span></li>
-                                <li>03. Sweet autumn <span>$ 170.0</span></li>
-                                <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
-                            </ul>
+                            
+                           
                             <ul class="checkout__total__all">
-                                <li>Subtotal <span>$750.99</span></li>
-                                <li>Total <span>$750.99</span></li>
+                                <li>Részösszeg <span id="rendelesresz">$750.99</span></li>
+                                <li>Végösszeg <span id="rendelesar">$750.99</span></li>
                             </ul>
                             <div class="checkout__input__checkbox">
                                 <label for="acc-or">

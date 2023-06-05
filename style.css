@@ -80,3 +80,8 @@ html{
 #rendeles{
     display: none;
 }
+#osszegzesar, #reszosszeg{
+    color: #e53637;
+    text-align: center;
+    font-weight: bold;
+}

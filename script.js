@@ -9,6 +9,7 @@ function kikerdezett() {
 
     console.log("page loaded")
    let kosararak=[]
+   let szallitas = 0
 //ADATOK
 //TOLDI MIKLÓS KATONÁJA VAGYOK LEGSZEBB KATONÁÁÁÁJA
 let toldi = {
@@ -65,7 +66,7 @@ let drip = {
         KosarDispl()
     }
 }
-//akkor egy bohóc
+//akkora egy bohóc
 let csabi = {
     nev: "Csovács Kaba cossplay",
 
@@ -214,7 +215,7 @@ KosarDispl()
 }
 function KosarDispl() {
 
-    document.getElementById("cartprice").innerHTML=kosarprice
+    document.getElementById("cartprice").innerHTML=kosarprice.toLocaleString()
     if(kosar.length>0) document.getElementById("cartcount").innerHTML=kosar.length
     else document.getElementById("cartcount").innerHTML=""
 
@@ -264,12 +265,36 @@ function KosarDispl() {
     kosarprice = (neuf.ar*neuf.kosarban)+(toldi.ar*toldi.kosarban)
         +(alekosz.ar*alekosz.kosarban)+(drip.ar*drip.kosarban)+
         (csabi.ar*csabi.kosarban)+(kalap.ar*kalap.kosarban)+
-        (erettsegi.ar*erettsegi.kosarban)+(tanarno.ar*tanarno.kosarban)
+        (erettsegi.ar*erettsegi.kosarban)+(tanarno.ar*tanarno.kosarban)+szallitas
     /* na nem mintha az ingyenes item számítani,
     de az Epic Games is küld számlát a Fortnite-ról ha letöltjük
      */
+    toldi.kosarban      = parseInt(document.getElementById("toldimenny").value)
 
-Updatemennyiseg()
+    neuf.kosarban       = parseInt(document.getElementById("neufmenny").value)
+    alekosz.kosarban    = parseInt(document.getElementById("alekoszmenny").value)
+    drip.kosarban       = parseInt(document.getElementById("dripmenny").value)
+    csabi.kosarban      = parseInt(document.getElementById("csabimenny").value)
+    kalap.kosarban      = parseInt(document.getElementById("kalapmenny").value)
+    erettsegi.kosarban  = parseInt(document.getElementById("erettsegimenny").value)
+    tanarno.kosarban    = parseInt(document.getElementById("tanarnomenny").value)
+
+    document.getElementById("osszegzesar").innerHTML= kosarprice.toLocaleString()+" Ft"
+    document.getElementById("reszosszeg").innerHTML= kosarprice.toLocaleString()+" Ft"
+    document.getElementById("rendelesresz").innerHTML= kosarprice.toLocaleString()+" Ft"
+    document.getElementById("rendelesar").innerHTML= kosarprice.toLocaleString()+" Ft"
+ 
+
+    ar(toldi)
+    ar(neuf)
+    ar(alekosz)
+    ar(drip)
+    ar(csabi)
+    ar(kalap)
+    ar(erettsegi)
+    ar(tanarno)
+    
+
 
 }
 function Updatemennyiseg() {
@@ -282,6 +307,9 @@ function Updatemennyiseg() {
     kalap.kosarban      = parseInt(document.getElementById("kalapmenny").value)
     erettsegi.kosarban  = parseInt(document.getElementById("erettsegimenny").value)
     tanarno.kosarban    = parseInt(document.getElementById("tanarnomenny").value)
+    KosarDispl()
+    
+
 
  
     ar(toldi)
@@ -292,7 +320,7 @@ function Updatemennyiseg() {
     ar(kalap)
     ar(erettsegi)
     ar(tanarno)
-    KosarDispl()
+    
 }
 function ar(params) {
 /*
@@ -309,15 +337,14 @@ document.getElementById(params+"ar").innerHTML= (cucc.ar*cucc.kosarban)+" Ft"
 */
     console.log(params+"ar")
 
-    document.getElementById("toldiar").innerHTML = toldi.kosarban*toldi.ar
-    
-    document.getElementById("neufar").innerHTML = neuf.kosarban*neuf.ar
-    document.getElementById("alekoszar").innerHTML = alekosz.kosarban*alekosz.ar
-    document.getElementById("dripar").innerHTML = drip.kosarban*drip.ar
-    document.getElementById("csabiar").innerHTML = csabi.kosarban*csabi.ar
-    document.getElementById("kalapar").innerHTML = kalap.kosarban*kalap.ar
-    document.getElementById("erettsegiar").innerHTML = erettsegi.kosarban*erettsegi.ar
-    document.getElementById("tanarnoar").innerHTML = tanarno.kosarban*tanarno.ar
+    document.getElementById("toldiar").innerHTML =      (toldi.kosarban*toldi.ar).toLocaleString()+" Ft"
+    document.getElementById("neufar").innerHTML =       (neuf.kosarban*neuf.ar).toLocaleString()+" Ft"
+    document.getElementById("alekoszar").innerHTML =    (alekosz.kosarban*alekosz.ar).toLocaleString()+" Ft"
+    document.getElementById("dripar").innerHTML =       (drip.kosarban*drip.ar).toLocaleString()+" Ft"
+    document.getElementById("csabiar").innerHTML =      (csabi.kosarban*csabi.ar).toLocaleString()+" Ft"
+    document.getElementById("kalapar").innerHTML =      (kalap.kosarban*kalap.ar).toLocaleString()+" Ft"
+    document.getElementById("erettsegiar").innerHTML =  (erettsegi.kosarban*erettsegi.ar).toLocaleString()+" Ft"
+    document.getElementById("tanarnoar").innerHTML =    (tanarno.kosarban*tanarno.ar).toLocaleString()+" Ft"
     
 }
 
@@ -392,16 +419,19 @@ function KosarhozVisz() {
     document.getElementById("shop").style="display: none!important;"
     document.getElementById("kosar").style="display: block!important;"
     document.getElementById("rendeles").style="display: none!important;"
+    KosarDispl()
 }
 function ShophozVisz() {
     console.log("visz")
     document.getElementById("kosar").style="display: none!important;"
     document.getElementById("shop").style="display: block!important;"
     document.getElementById("rendeles").style="display: none!important;"
+    KosarDispl()
 }
 function Rendeles() {
     console.log("visz")
     document.getElementById("kosar").style="display: none!important;"
     document.getElementById("shop").style="display: none!important;"
     document.getElementById("rendeles").style="display: block!important;"
+    KosarDispl()
 }
