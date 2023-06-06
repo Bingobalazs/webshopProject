@@ -216,9 +216,7 @@ KosarDispl()
 }
 function KosarDispl() {
 
-    document.getElementById("cartprice").innerHTML=kosarprice.toLocaleString()
-    if(kosar.length>0) document.getElementById("cartcount").innerHTML=kosar.length
-    else document.getElementById("cartcount").innerHTML=""
+
 
         //Megjeleníti a kosárban lévő dolgokat
         if (toldi.kosarban > 0)     document.getElementById("toldi").style = "display: flex;"
@@ -286,7 +284,12 @@ function KosarDispl() {
     document.getElementById("reszosszeg").innerHTML= kosarprice.toLocaleString()+" Ft"
     document.getElementById("rendelesresz").innerHTML= kosarprice.toLocaleString()+" Ft"
     document.getElementById("rendelesar").innerHTML= osszegar.toLocaleString()+" Ft"
- 
+
+
+
+    document.getElementById("cartprice").innerHTML=kosarprice.toLocaleString()
+    if(kosar.length>0) document.getElementById("cartcount").innerHTML=neuf.kosarban+toldi.kosarban+alekosz.kosarban+drip.kosarban+csabi.kosarban+kalap.kosarban+erettsegi.kosarban+tanarno.kosarban
+    else document.getElementById("cartcount").innerHTML=""
 
     ar(toldi)
     ar(neuf)
@@ -345,7 +348,10 @@ function Fizetype() {
         return 0
     }
 }
-setInterval(KosarDispl, 100)
+function szallitasiadat() {
+    if (document.getElementById("szall").checked)document.getElementById("szallitasi").style="display: none"
+    else document.getElementById("szallitasi").style="display: block"
+}
 
 
 function ar(params) {

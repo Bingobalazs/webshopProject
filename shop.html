@@ -583,6 +583,80 @@
                             </div>
                         </div>
                         <div class="checkout__input__checkbox">
+                          <label for="acc">
+                              A szállítási adatok megegyeznek a számlázási adatokkal
+                              <input type="checkbox" id="szall"  checked onchange="szallitasiadat()">
+                              <span class="checkmark"></span>
+                          </label>
+                         
+                      </div>
+
+
+
+                        <div id="szallitasi">
+                        <h6 class="checkout__title">Szállítási adatok</h6>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Vezetéknév<span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Keresztnév<span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Ország<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="checkout__input">
+                            <p>Cím<span>*</span></p>
+                            <input type="text" placeholder="Utca, házszám" class="checkout__input__add">
+                            <input type="text" placeholder="Lakás, kiegészítés (opcionális)">
+                        </div>
+                        <div class="checkout__input">
+                            <p>Település<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="checkout__input">
+                            <p>Térség/megye<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="checkout__input">
+                            <p>Irányítószám<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Telefonszám<span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Email cím<span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="checkout__input__checkbox">
                             <label for="acc">
                                 Fiók létrehozása
                                 <input type="checkbox" id="acc">
@@ -618,7 +692,7 @@
                             <div class="checkout__input__checkbox">
                                 <label for="acc-or">
                                     Utánvét
-                                    <input type="radio" id="acc-or" name="fizet"  onchange="plusz=true">
+                                    <input type="radio" id="acc-or" name="fizet"  onchange="plusz=true; KosarDispl()">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
@@ -626,14 +700,14 @@
                             <div class="checkout__input__checkbox">
                                 <label for="payment">
                                     Bankkártya
-                                    <input type="radio" id="payment" name="fizet" onchange="plusz=false">
+                                    <input type="radio" id="payment" name="fizet" onchange="plusz=false; KosarDispl()">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                             <div class="checkout__input__checkbox">
                                 <label for="paypal">
                                     Paypal
-                                    <input type="radio" id="paypal" name="fizet" onchange="plusz=false">
+                                    <input type="radio" id="paypal" name="fizet" onchange="plusz=false; KosarDispl()">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
