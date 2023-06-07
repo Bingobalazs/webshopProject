@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <title>Shop</title>
@@ -582,18 +582,19 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="checkout__input__checkbox">
-                          <label for="acc">
-                              A szállítási adatok megegyeznek a számlázási adatokkal
-                              <input type="checkbox" id="szall"  checked onchange="szallitasiadat()">
-                              <span class="checkmark"></span>
-                          </label>
-                         
-                      </div>
+                            <label for="szall">
+                                Megegyeznek a szállítási adatok a számlázási adatokkal
+                                <input type="checkbox" id="szall" checked onchange="szallitasiadat()" >
+                                <span class="checkmark"></span>
+                            </label>
+                            <p>Megadhat a szállítási adatoktól eltérő számlázási adatokat</p>
+                        </div>
 
 
 
-                        <div id="szallitasi">
+                        <div id="szallitasi" style="display: none;">
                         <h6 class="checkout__title">Szállítási adatok</h6>
                         <div class="row">
                             <div class="col-lg-6">
@@ -696,11 +697,11 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <p>Készpénzes fizetés szállításkor a futárnál.(+1 499 Ft)</p>
+                            <p>Készpénzes fizetés szállításkor a futárnál.(+499 Ft)</p>
                             <div class="checkout__input__checkbox">
                                 <label for="payment">
                                     Bankkártya
-                                    <input type="radio" id="payment" name="fizet" onchange="plusz=false; KosarDispl()">
+                                    <input checked type="radio" id="payment" name="fizet" onchange="plusz=false; KosarDispl()">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
@@ -711,7 +712,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <button type="submit" class="site-btn">RENDELÉS</button>
+                            <button type="submit" class="site-btn" onclick="megrendel(); ShophozVisz()" >RENDELÉS</button>
                         </div>
                     </div>
                 </div>

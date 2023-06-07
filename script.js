@@ -343,14 +343,15 @@ function Szallitas() {
 }
 function Fizetype() {
     if (plusz) {
-        return 1499
+        return 499
     } else {
+        let scam = "https://www.nerdwallet.com/article/credit-cards/credit-card-scams-to-know"
         return 0
     }
 }
 function szallitasiadat() {
     if (document.getElementById("szall").checked)document.getElementById("szallitasi").style="display: none"
-    else document.getElementById("szallitasi").style="display: block"
+    else document.getElementById("szallitasi").style="display: block!important"
 }
 
 
@@ -461,9 +462,20 @@ function ShophozVisz() {
     KosarDispl()
 }
 function Rendeles() {
-    console.log("visz")
+    if (kosarprice>0 || tanarno.kosarban>0) {
+        console.log("visz")
     document.getElementById("kosar").style="display: none!important;"
     document.getElementById("shop").style="display: none!important;"
     document.getElementById("rendeles").style="display: block!important;"
+    document.getElementById("szall").checked=true
+    }
+    else window.alert("A kosár üres, semmit meg amúgy sem tudsz tőllünk rendelni, ha erre van igényed menj az ürers boltba!!!!")
+
     KosarDispl()
+}
+function megrendel() {
+    if (plusz) {
+        window.alert('Rendelés leadva!');
+    } else window.alert('Fizetési oldara vinne de ne akarjál fizetni');
+
 }
